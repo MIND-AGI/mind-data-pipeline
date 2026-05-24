@@ -59,9 +59,9 @@ Or override anything on the CLI (the `.sh` forwards `"$@"` to the Python):
 
 ```bash
 bash sft2mds.sh \
-    --input-path /mnt/nfs/jichengzhi/data/Nemotron-Cascade-2-SFT-Data \
-    --out-root   /mnt/nfs/liuzehao/database/nemotron_cascade2_sft_mds \
-    --tokenizer  /mnt/nfs/liuzehao/modelbase/Nemo/Nemotron-Cascade-2-30B-A3B \
+    --input-path ./data/Nemotron-Cascade-2-SFT-Data \
+    --out-root   ./data/nemotron_cascade2_sft_mds \
+    --tokenizer  nvidia/Nemotron-Cascade-2-30B-A3B \
     --max-doc-length 2048 \
     --num-process 16 \
     --trust-remote-code \
@@ -139,8 +139,8 @@ Or override:
 
 ```bash
 bash mds2packed.sh \
-    --local-root /mnt/nfs/liuzehao/database/nemotron_cascade2_sft_mds \
-    --out-root   /mnt/nfs/liuzehao/database/nemotron_cascade2_sft_packed_mds \
+    --local-root ./data/nemotron_cascade2_sft_mds \
+    --out-root   ./data/nemotron_cascade2_sft_packed_mds \
     --max-pack-length 32768 \
     --pad-token-id 11 \
     --buffer-size 200 \

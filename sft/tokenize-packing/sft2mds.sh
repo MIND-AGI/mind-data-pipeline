@@ -22,9 +22,9 @@ export HUGGINGFACE_HUB_CACHE="${HUGGINGFACE_HUB_CACHE:-./hf_cache}"
 
 # Defaults targeting Nemotron-Cascade-2 SFT data + tokenizer.
 # Override any of these via CLI flags (forwarded by "$@").
-INPUT_PATH=/mnt/nfs/jichengzhi/data/Nemotron-Cascade-2-SFT-Data/
-OUT_ROOT=/mnt/nfs/liuzehao/database/Nemotron-Cascade-2-SFT-tokenized-MDS/
-TOKENIZER=/mnt/nfs/liuzehao/modelbase/Nemo/Nemotron-Cascade-2-30B-A3B
+INPUT_PATH=./data/Nemotron-Cascade-2-SFT-Data/
+OUT_ROOT=./data/Nemotron-Cascade-2-SFT-tokenized-MDS/
+TOKENIZER=nvidia/Nemotron-Cascade-2-30B-A3B
 MAX_DOC_LENGTH=131072
 NUM_PROCESS=48
 # Nemotron chat template defaults to truncate_history_thinking=True (drops
@@ -42,6 +42,3 @@ python "$SCRIPT_DIR/sft2mds.py" \
 	--trust-remote-code \
 	--template-kwargs "$TEMPLATE_KWARGS" \
 	"$@"
-
-
-# /mnt/nfs/liuzehao/miniconda3/envs/liu/bin/python sft2mds.py     --input-path /mnt/nfs/jichengzhi/data/Nemotron-Cascade-2-SFT-Data/chat    --out-root   /mnt/nfs/liuzehao/database/chat_mds     --tokenizer  /mnt/nfs/liuzehao/modelbase/Nemo/Nemotron-Cascade-2-30B-A3B     --max-doc-length 2048     --num-process 8     --trust-remote-code     --template-kwargs '{"truncate_history_thinking": false}'

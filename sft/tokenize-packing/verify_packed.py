@@ -26,7 +26,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--data-root", required=True, help="Packed MDS dir (Stage 2 --out-root)")
     p.add_argument(
         "--tokenizer",
-        default="/mnt/nfs/liuzehao/modelbase/Nemo/Nemotron-Cascade-2-30B-A3B",
+        default="nvidia/Nemotron-Cascade-2-30B-A3B",
         help="HF tokenizer path/name for decoding the samples",
     )
     p.add_argument("--pad-token-id", type=int, default=11, help="Pad token id used at Stage 2")

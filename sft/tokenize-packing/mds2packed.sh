@@ -19,8 +19,8 @@ export HUGGINGFACE_HUB_CACHE="${HUGGINGFACE_HUB_CACHE:-./hf_cache}"
 
 NPROC_PER_NODE=16
 MASTER_PORT=10901
-LOCAL_ROOT=/mnt/nfs/liuzehao/database/Nemotron-Cascade-2-SFT-tokenized-MDS/
-OUT_ROOT=/mnt/nfs/liuzehao/database/Nemotron-Cascade-2-SFT-tokenized-MDS-packed/
+LOCAL_ROOT=./data/Nemotron-Cascade-2-SFT-tokenized-MDS/
+OUT_ROOT=./data/Nemotron-Cascade-2-SFT-tokenized-MDS-packed/
 MAX_PACK_LENGTH=131072
 # Nemotron-Cascade-2 tokenizer has eos_token_id == pad_token_id == 11.
 PAD_TOKEN_ID=11
